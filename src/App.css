@@ -1,38 +1,124 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  margin-top: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0F1624;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.todo-input {
+  height: 48px;
+  border: none;
+  outline: none;
+  width: 330px;
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  font-size: 20px;
   color: white;
+  border-bottom: 2px solid #d9dbdf;
+  background-color: transparent;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.todo-input:focus {
+  outline: none;
+  box-shadow: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo-input::placeholder {
+  color: #d9dbdf;
+  font-size: 15px;
+}
+
+.todo-button {
+  margin-left: 10px ;
+  font-weight: bold;
+  font-size: 40px;
+  padding :3px;
+  height: 46px;
+  width: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #777a7e;
+  color: #d9dbdf;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.todo-button:hover {
+  background-color: rgb(74, 74, 194);
+  color: #0F1624;
+}
+
+.todo-container {
+  /* background-color: lightblue; */
+  margin-top: 30px;
+  padding: 30px 0;
+}
+
+.todo {
+  background-color: transparent;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1.5px solid #d9dbdf;
+  display: flex;
+  margin-bottom: 5px;
+} 
+
+.todo-item {
+  flex: 10;
+  color: #d9dbdf;
+  font-family:'Poppins', sans-serif; 
+}
+
+.complete-btn, .trash-btn {
+  flex:1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.complete-btn{
+  border: 1px solid green;
+  margin-right: 2px;
+  color:#d9dbdf;
+  padding: 4px 0;
+}
+
+.trash-btn {
+  margin-left: 2px;
+  border: 1px solid red;
+  color: #d9dbdf;
+  padding: 4px 0;
+}
+
+.complete-btn:hover {
+  background-color: green;
+}
+
+.trash-btn:hover {
+  background-color: red;
 }

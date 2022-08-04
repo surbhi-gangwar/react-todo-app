@@ -122,3 +122,8 @@ form {
 .trash-btn:hover {
   background-color: red;
 }
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}

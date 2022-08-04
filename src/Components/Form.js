@@ -9,23 +9,23 @@ function Form({inputText, setInputText, todos, setTodos}) {
 
     const keyPressedHandler = e => {
         if(e.keyCode === 13) {
-            submitTodoHandler()
+            e.preventDefault()
+            submitTodoHandler(e)
         }
     }
 
     const submitTodoHandler = e => {
         e.preventDefault()
-        const currentDate = new Date()
         setTodos([
-            ...todos,
-            {text: inputText, isCompleted: false, date: currentDate, id: currentDate.getTime()+"-"+inputText}
+            {text: inputText, isCompleted: false,id: Math.random()*10},
+            ...todos
         ])
         setInputText("")
     }
     return(
         <form>
             <input type="text" className="todo-input" placeholder="Enter a todo" value={inputText}
-            onChange={inputTextHandler} onKeyPress={keyPressedHandler} />
+            onChange={inputTextHandler} onKeyDown={keyPressedHandler} />
             <div className="todo-button" onClick={submitTodoHandler}>+</div>
         </form>
     )
